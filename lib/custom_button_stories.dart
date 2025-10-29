@@ -23,6 +23,15 @@ Widget loadingButton(BuildContext context) {
   return const CustomButton(text: 'Processing...', isLoading: true);
 }
 
+@widgetbook.UseCase(name: 'Loading with Custom Color', type: CustomButton)
+Widget loadingCustomColorButton(BuildContext context) {
+  return const CustomButton(
+    text: 'Saving...', 
+    backgroundColor: Colors.green,
+    isLoading: true,
+  );
+}
+
 @widgetbook.UseCase(name: 'Disabled', type: CustomButton)
 Widget disabledButton(BuildContext context) {
   return const CustomButton(text: 'Disabled', onPressed: null);
