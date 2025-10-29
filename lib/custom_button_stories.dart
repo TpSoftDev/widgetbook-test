@@ -26,7 +26,7 @@ Widget loadingButton(BuildContext context) {
 @widgetbook.UseCase(name: 'Loading with Custom Color', type: CustomButton)
 Widget loadingCustomColorButton(BuildContext context) {
   return const CustomButton(
-    text: 'Saving...', 
+    text: 'Saving...',
     backgroundColor: Colors.green,
     isLoading: true,
   );
