@@ -32,6 +32,11 @@ final directories = <_widgetbook.WidgetbookNode>[
             builder: _widgetbook_workspace_custom_button_stories.greenButton,
           ),
           _widgetbook.WidgetbookUseCase(
+            name: 'Interactive Button',
+            builder:
+                _widgetbook_workspace_custom_button_stories.interactiveButton,
+          ),
+          _widgetbook.WidgetbookUseCase(
             name: 'Loading State',
             builder: _widgetbook_workspace_custom_button_stories.loadingButton,
           ),
@@ -49,6 +54,11 @@ final directories = <_widgetbook.WidgetbookNode>[
       _widgetbook.WidgetbookComponent(
         name: 'UserCard',
         useCases: [
+          _widgetbook.WidgetbookUseCase(
+            name: 'Interactive User Card',
+            builder:
+                _widgetbook_workspace_user_card_stories.interactiveUserCard,
+          ),
           _widgetbook.WidgetbookUseCase(
             name: 'User Card',
             builder: _widgetbook_workspace_user_card_stories.userCard,

@@ -18,8 +18,8 @@ class WidgetbookApp extends StatelessWidget {
     return Widgetbook.material(
       directories: directories,
       addons: [
-               // Device frames - shows actual phone bezels/frames  
-               DeviceFrameAddon(
+        // Device frames - shows actual phone bezels/frames
+        DeviceFrameAddon(
           devices: [
             Devices.ios.iPhone13,
             Devices.ios.iPhone13ProMax,
