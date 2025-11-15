@@ -1,0 +1,15 @@
+targets:
+  $default:
+    builders:
+      widgetbook_generator:use_case_builder:
+        options:
+          include:
+            - "lib/**/*.dart"
+            - "../lib/widgets/**/*.dart"
+      widgetbook_generator:app_builder:
+        options:
+          include:
+            - "lib/**/*.dart"
+            - "../lib/widgets/**/*.dart"
+
+            
