@@ -1,4 +1,5 @@
 name: Deploy Widgetbook to GitHub Pages
+# Force fresh deployment with Interactive stories
 
 on:
   push:
