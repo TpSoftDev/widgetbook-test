@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:widgetbook/widgetbook.dart';
-import 'package:widgetbook/widgetbook.dart' show DeviceFrameAddon, Devices;
-import 'package:widgetbook/src/addons/viewport_addon/viewport_data.dart';
 import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
-
 
 // This file will be generated automatically
 import 'main.directories.g.dart';
@@ -71,7 +68,11 @@ class WidgetbookApp extends StatelessWidget {
           ],
         ),
         // Text scaling
-        TextScaleAddon(scales: [1.0, 1.5, 2.0], initialScale: 1.0),
+        TextScaleAddon(
+          min: 1.0,
+          max: 2.0,
+          initialScale: 1.0,
+        ),
         // Alignment - centers widgets (must be last/innermost)
         AlignmentAddon(),
       ],
