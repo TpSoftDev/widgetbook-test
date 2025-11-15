@@ -1,0 +1,46 @@
+name: Deploy Widgetbook to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+          channel: 'stable'
+          
+      - name: Install dependencies
+        run: |
+          cd widgetbook_app
+          flutter pub get
+          
+      - name: Generate directories
+        run: |
+          cd widgetbook_app
+          dart run build_runner build -d
+          
+      - name: Build web
+        run: |
+          cd widgetbook_app
+          flutter build web --base-href="/widgetbook-test/"
+          
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./widgetbook_app/build/web
