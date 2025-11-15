@@ -13,11 +13,11 @@ Widget interactiveButton(BuildContext context) {
     initialValue: 'Click Me',
   );
   
-  final colorName = context.knobs.string.fromOptionsNullable(
+  final colorName = context.knobs.list(
     label: 'Background Color',
-    initialOption: 'Blue',
     options: ['Blue', 'Green', 'Red', 'Purple', 'Orange'],
-  ) ?? 'Blue';
+    initialOption: 'Blue',
+  );
   
   final backgroundColor = {
     'Blue': Colors.blue,
