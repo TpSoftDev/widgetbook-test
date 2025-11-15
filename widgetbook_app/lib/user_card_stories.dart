@@ -18,11 +18,11 @@ Widget interactiveUserCard(BuildContext context) {
     initialValue: 'john.doe@example.com',
   );
   
-  final colorName = context.knobs.list(
+  final colorName = context.knobs.string.fromOptionsNullable(
     label: 'Card Color',
-    options: ['White', 'Blue', 'Green', 'Purple', 'None'],
     initialOption: 'None',
-  );
+    options: ['White', 'Blue', 'Green', 'Purple', 'None'],
+  ) ?? 'None';
   
   final backgroundColor = {
     'White': Colors.white,
@@ -32,11 +32,11 @@ Widget interactiveUserCard(BuildContext context) {
     'None': null,
   }[colorName];
   
-  final avatarType = context.knobs.list(
+  final avatarType = context.knobs.string.fromOptionsNullable(
     label: 'Avatar Type',
-    options: ['icon', 'account', 'none'],
     initialOption: 'icon',
-  );
+    options: ['icon', 'account', 'none'],
+  ) ?? 'icon';
   
   IconData? avatarIcon;
   if (avatarType == 'icon') {
